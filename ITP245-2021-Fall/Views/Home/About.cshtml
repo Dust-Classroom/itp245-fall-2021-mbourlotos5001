@@ -1,7 +1,60 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
+<link href="~/Content/aboutStyle.css" rel="stylesheet" />
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="header">
+    <h2 style="text-align:right;">@ViewBag.TodaysDate</h2>
+    <div class="intro">
+        <div><img height="200" src="~/Content/images/olive.png" alt="Michael with puggle" /></div>
+        <div class="headerText">
+            <h1>@ViewBag.Name</h1>
+            <h3>Programming Student</h3>
+        </div>
+    </div>
+           
+   
+</div>
+
+
+<div class="goals">
+
+
+
+    <div>
+        <ul class="goalList">
+            <li><h2>CAREER GOALS</h2></li>
+            <li>Graduate Spring 2022</li>
+            <li>Possibly Apprentice at <a href="https://maxxpotential.com/apprentice/"> Maxx Potential</a></li>
+            <li>Get Literally Any Job</li>
+        </ul>
+    </div>
+    <div><img width="400" src="~/Content/images/My Post.jpg" alt="laptop and some hands" /></div>
+</div>
+
+
+<div class="hob">
+    <div><img width="400" src="~/Content/images/drummy.jpeg" alt="stock art of drum set" /></div>
+    <div>
+        <ul class="hobList">
+            <li><h2>HOBBIES</h2></li>
+            <li>Surfing</li>
+            <li>Biking</li>
+            <li><a href="https://photoaday.michaelbourlotos.com/"> Photography</a></li>
+            <li><a href="https://wearekomodo.bandcamp.com/releases"> Music</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="form">
+    <form>
+        <input type="checkbox" id="input1" name="input1" value="robot" />
+        <label for="input1">I am a robot</label><br />
+        <input type="checkbox" id="input2" name="input2" value="human" />
+        <label for="input2">I am a human person</label><br />
+    </form>
+</div>
+
+

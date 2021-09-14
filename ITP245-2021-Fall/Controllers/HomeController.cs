@@ -15,8 +15,8 @@ namespace ITP245_2021_Fall.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.TodaysDate = DateTime.Today.ToString("d");
+            ViewBag.Name = "Michael Bourlotos";
             return View();
         }
 
