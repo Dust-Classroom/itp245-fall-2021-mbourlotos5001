@@ -1,6 +1,9 @@
---< YOUR NAME GOES HERE >--
+--< Michael Bourlotos>--
 Fall 2021
 ITP-245
 
 --< 09/13/2021 >--
 --< Controller View>--
+
+--< 09/22/2021 >--
+--< Model>--

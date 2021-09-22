@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ITP245_2021_Fall.Models.About
+@{
     ViewBag.Title = "About";
 }
 <link href="~/Content/aboutStyle.css" rel="stylesheet" />
@@ -7,14 +8,14 @@
 <div class="header">
     <h2 style="text-align:right;">@ViewBag.TodaysDate</h2>
     <div class="intro">
-        <div><img height="200" src="~/Content/images/olive.png" alt="Michael with puggle" /></div>
+        <div>@Html.Raw(Model.AboutPhoto)</div>
         <div class="headerText">
-            <h1>@ViewBag.Name</h1>
-            <h3>Programming Student</h3>
+            <h1>@Model.FirstName @Model.LastName</h1>
+            <h3>@Model.Description</h3>
         </div>
     </div>
-           
-   
+
+
 </div>
 
 
@@ -25,9 +26,10 @@
     <div>
         <ul class="goalList">
             <li><h2>CAREER GOALS</h2></li>
-            <li>Graduate Spring 2022</li>
-            <li>Possibly Apprentice at <a href="https://maxxpotential.com/apprentice/"> Maxx Potential</a></li>
-            <li>Get Literally Any Job</li>
+            @for (int x = 0; x < Model.Goals.Count; x++)
+            {
+        <li>@Html.Raw(Model.Goals[x])</li>
+            }
         </ul>
     </div>
     <div><img width="400" src="~/Content/images/My Post.jpg" alt="laptop and some hands" /></div>
@@ -39,10 +41,10 @@
     <div>
         <ul class="hobList">
             <li><h2>HOBBIES</h2></li>
-            <li>Surfing</li>
-            <li>Biking</li>
-            <li><a href="https://photoaday.michaelbourlotos.com/"> Photography</a></li>
-            <li><a href="https://wearekomodo.bandcamp.com/releases"> Music</a></li>
+            @for (int x = 0; x < Model.Hobbies.Count; x++)
+            {
+                <li>@Html.Raw(Model.Hobbies[x])</li>
+            }
         </ul>
     </div>
 </div>
