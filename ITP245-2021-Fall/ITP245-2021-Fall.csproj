@@ -167,6 +167,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Inventory\Controllers\InventoryHomeController.cs" />
+    <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
+    <Compile Include="Areas\School\Controllers\SchoolHomeController.cs" />
+    <Compile Include="Areas\School\SchoolAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -192,12 +196,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\aboutStyle.css" />
     <Content Include="Content\images\My Post.jpg" />
+    <Content Include="Content\images\inv.jpg" />
+    <Content Include="Content\inventoryStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\School\Views\web.config" />
+    <Content Include="Areas\Inventory\Views\web.config" />
+    <Content Include="Areas\School\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\School\Views\SchoolHome\Index.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_School.cshtml" />
+    <Content Include="Areas\Inventory\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Inventory\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Inventory\Views\InventoryHome\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Shared\_Inventory.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -255,6 +271,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Inventory\Data\" />
+    <Folder Include="Areas\School\Data\" />
     <Folder Include="Views\About\" />
   </ItemGroup>
   <ItemGroup>

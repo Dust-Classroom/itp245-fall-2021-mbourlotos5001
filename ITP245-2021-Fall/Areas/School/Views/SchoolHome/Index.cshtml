@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "School";
+    Layout = "~/Areas/School/Views/Shared/_School.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="continer">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text text-info">Facilities</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Campuses &raquo;"), "Index", "Campus", null, new { @class = "btn btn-info" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text text-primary">Schedule</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Courses &raquo;"), "Index", "Campus", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
