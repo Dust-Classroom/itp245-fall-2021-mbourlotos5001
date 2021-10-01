@@ -43,11 +43,6 @@ namespace ITP245_2021_Fall.Controllers
             return View(user);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+       
     }
 }
