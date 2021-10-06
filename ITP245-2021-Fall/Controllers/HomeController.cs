@@ -29,7 +29,7 @@ namespace ITP245_2021_Fall.Controllers
             hobbies.Add("<a href=\"https://wearekomodo.bandcamp.com/releases\"> Music</a>");
             var user = new Models.About()
             {
-                AboutPhoto = "<img height=\"200\" src=\"/ITP24511/Content/images/olive.png\" alt=\"Michael with puggle\" />",
+                AboutPhoto = "<img class=\"align-self-center mr-3\" height=\"200\" src=\"/ITP24511/Content/images/olive.png\" alt=\"Michael with puggle\" />",
                 Description = "Programming Student",
                 FirstName = "Michael",
                 LastName = "Bourlotos",
