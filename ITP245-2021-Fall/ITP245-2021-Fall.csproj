@@ -190,21 +190,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\lux.css" />
     <Content Include="Content\images\pipe.jpg" />
     <Content Include="Content\mint.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\aboutStyle.css" />
     <Content Include="Content\images\My Post.jpg" />
     <Content Include="Content\images\inv.jpg" />
-    <Content Include="Content\inventoryStyle.css" />
-    <Content Include="Content\lux.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\School\Views\web.config" />

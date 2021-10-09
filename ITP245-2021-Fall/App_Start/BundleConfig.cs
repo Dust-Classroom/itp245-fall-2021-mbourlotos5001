@@ -38,11 +38,12 @@ namespace ITP245_2021_Fall
             //else if (month > 8 && month < 12)
             //    season = "~/Content/mint.css";
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      $"~/Content/{ConfigurationManager.AppSettings["Bootstrap"]}.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include( 
+                     $"~/Content/{ConfigurationManager.AppSettings["Bootstrap"]}.css",
                       "~/Content/site.css"));
 
-            
+           
+
 
         }
     }
