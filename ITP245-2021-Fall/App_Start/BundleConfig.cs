@@ -26,17 +26,6 @@ namespace ITP245_2021_Fall
                       "~/Scripts/bootstrap.js"));
 
 
-            //var month =  DateTime.Today.Month;
-            
-            //var season = "x";
-            //if (month > 11 || month < 3)
-            //    season = "winter";
-            //else if (month > 2 && month < 6)
-            //    season = "~/Content/lux.css";
-            //else if (month > 5 && month < 9)
-            //    season = "~/Content/bootstrap.css";
-            //else if (month > 8 && month < 12)
-            //    season = "~/Content/mint.css";
 
             bundles.Add(new StyleBundle("~/Content/css").Include( 
                      $"~/Content/{ConfigurationManager.AppSettings["Bootstrap"]}.css",

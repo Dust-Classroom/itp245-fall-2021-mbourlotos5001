@@ -9,6 +9,7 @@ namespace ITP245_2021_Fall.Areas.Inventory.Controllers
     public class InventoryHomeController : Controller
     {
         // GET: Inventory/InventoryHome
+        [Authorize(Roles = "Inventory")]
         public ActionResult Index()
         {
             return View();

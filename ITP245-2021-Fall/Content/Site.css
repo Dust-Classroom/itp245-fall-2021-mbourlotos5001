@@ -41,5 +41,14 @@ textarea {
     color: white;
 }
 
+.navbar-expand-lg {
+    background-color: aqua;
+}
 
+.navbar-right > li > a {
+    color: #ced4da;
+}
 
+.kennyLogins {
+    background-color: #FFFF00
+}
