@@ -3,8 +3,17 @@
 }
 
 
-
-<div class="container body-content">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center inventory--nav" id="navbarColor01">
+    <ul class="navbar-nav navbar-static-top schoolNavLink">
+        <li>@Html.ActionLink("Inventory Home |", "Index", "InventoryHome", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Items", "Index", "Items", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Spoilages", "Index", "Spoilages", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Purchase Orders", "Index", "PurchaseOrders", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Venders", "Index", "Vendors", new { area = "Inventory" }, null)</li>
+    </ul>
+</nav>
+<div class="container body-content inventory--content">
     @RenderBody()
     <hr />
 </div>

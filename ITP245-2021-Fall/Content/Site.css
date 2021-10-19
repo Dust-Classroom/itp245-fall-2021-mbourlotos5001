@@ -38,7 +38,7 @@ textarea {
 
 .schoolNavLink > li {
     padding-right: 10px;
-    color: white;
+    
 }
 
 .navbar-expand-lg {
@@ -51,4 +51,19 @@ textarea {
 
 .kennyLogins {
     background-color: #FFFF00
+}
+.inventory--nav {
+    margin: 20px;
+}
+
+
+.inventory--nav > ul > li > a {
+    text-decoration: none;
+}
+
+
+.inventory--content {
+    max-width: 100%;
+    
+
 }
