@@ -17,6 +17,7 @@ namespace ITP245_2021_Fall.Areas.Inventory.Controllers
         // GET: Inventory/Vendors
         public ActionResult Index()
         {
+            ViewBag.State = new SelectList(db.Vendors.OrderBy(d => d.State), "State", "State");
             return View(db.Vendors.ToList());
         }
 
@@ -115,6 +116,14 @@ namespace ITP245_2021_Fall.Areas.Inventory.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult _IndexByTag(string parm)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var vendors = db.Vendors
+                .Where(c => c.State.Equals(parm))
+                .ToArray();
+            return PartialView("_Index", vendors);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

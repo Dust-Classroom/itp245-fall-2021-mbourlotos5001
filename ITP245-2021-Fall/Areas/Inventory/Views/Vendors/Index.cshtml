@@ -8,75 +8,23 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Vendor &raquo;"), "Create", null, null, new { @class = "btn btn-primary" })
+    &nbsp;&nbsp;&nbsp;<label class="filter">Filter by</label>&nbsp;&nbsp;&nbsp;<label class="filter">State</label>&nbsp;&nbsp;&nbsp;
+    @Html.DropDownList("State", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contact)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZipCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contact)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VendorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VendorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VendorId })
-        </td>
-    </tr>
+<div id="vendorContainer">
+    @Html.Partial("_Index", Model)
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function FillByTag() {
+            var parm = $('#State').val();
+            var container = $('#vendorContainer');
+            container.load('@Url.Action("_IndexByTag")?parm=' + parm);
+            console.log(parm);
+        }
+    </script>
 }
-
-</table>

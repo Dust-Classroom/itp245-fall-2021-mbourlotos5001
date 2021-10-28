@@ -247,6 +247,8 @@
     <Content Include="Areas\Inventory\Views\Vendors\Details.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\Edit.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\_Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\_Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

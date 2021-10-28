@@ -20,4 +20,8 @@ ITP-245
 --< 10/19/2021 >--
 --< Scaffolding >--
 
+--< 10/28/2021 >--
+--< Filters, JavaScript, Partial Pages >--
+--< Version 1.0.0.0 >--
+
 

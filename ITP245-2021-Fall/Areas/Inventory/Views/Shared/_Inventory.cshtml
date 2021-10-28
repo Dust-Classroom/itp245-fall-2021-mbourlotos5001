@@ -10,10 +10,12 @@
         <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Inventory" }, null)</li>
         <li>@Html.ActionLink("Spoilages", "Index", "Spoilages", new { area = "Inventory" }, null)</li>
         <li>@Html.ActionLink("Purchase Orders", "Index", "PurchaseOrders", new { area = "Inventory" }, null)</li>
-        <li>@Html.ActionLink("Venders", "Index", "Vendors", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Vendors", "Index", "Vendors", new { area = "Inventory" }, null)</li>
     </ul>
 </nav>
 <div class="container body-content inventory--content">
     @RenderBody()
     <hr />
 </div>
+@RenderSection("scripts", required: false)
+
