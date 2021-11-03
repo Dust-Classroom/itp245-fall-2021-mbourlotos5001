@@ -8,15 +8,26 @@ using System.ComponentModel.DataAnnotations;
 namespace ITP245_Model
 {
     [MetadataType(typeof(ItemMetaData))]
-  public partial class Item
+    public partial class Item
     {
+        public string Price => $"{RetailPrice:C}";
+        public string Cost => $"{StandardCost:C}";
         private sealed class ItemMetaData
         {
-         
-            [Display(Name = "Item Title")]
+            [Display(Name = "Item")]
+            public string ItemId { get; set; }
+            [Display(Name = "Title")]
             public string Name { get; set; }
+            [Display(Name = "Category")]
+            public string CategoryId { get; set; }
 
-       
+            [Display(Name = "Quantity On Hand")]
+            public string QuantityOnHand { get; set; }
+            [Display(Name = "Retail Price")]
+            public string RetailPrice { get; set; }
+
+            [Display(Name = "Standard Cost")]
+            public string StandardCost { get; set; }
 
 
 
@@ -27,10 +38,13 @@ namespace ITP245_Model
     {
         private sealed class CategoryMetaData
         {
-            [Display(Name = "Format")]
+            [Display(Name = "Category")]
             public string Name { get; set; }
 
-        
+            [Display(Name = "Category")]
+            public string CategoryId { get; set; }
+            
+
 
 
 
@@ -44,8 +58,62 @@ namespace ITP245_Model
             [Display(Name = "Vendor")]
             public string Name { get; set; }
 
+            [Display(Name = "Zip Code")]
+            public string ZipCode { get; set; }
+
+            [Display(Name = "Phone Number")]
+            public string PhoneNumber { get; set; }
+
+            [Display(Name = "Address 1")]
+            public string Address1 { get; set; }
+
+            [Display(Name = "Address 2")]
+            public string Address2 { get; set; }
+
 
         }
     }
+    [MetadataType(typeof(PurchaseOrderMetaData))]
+    public partial class PurchaseOrder
+    {
+        public string DateDay => PoDate.ToString("d");
+        public string Val => $"{Amount:C}";
+        private sealed class PurchaseOrderMetaData
+        {
+
+            [Display(Name = "Vendor")]
+            public string VendorId { get; set; }
+
+            [Display(Name = "Purchase Order Date")]
+            public string PoDate { get; set; }
+            
+
+            [Display(Name = "Purchase Order #")]
+            public string PurchaseOrderNumber { get; set; }
+
+            
+
+
+        }
+    }
+    [MetadataType(typeof(SpoilageMetaData))]
+    public partial class Spoilage
+    {
+        public string DateDay => SpoilageDate.ToString("d");
+        public string Val => $"{Value:C}";
+        private sealed class SpoilageMetaData
+        {
+            [Display(Name = "Title")]
+            public string ItemId { get; set; }
+
+            [Display(Name = "Reason Type")]
+            public string ReasonType { get; set; }
+
+            [Display(Name = "Spoilage Date")]
+            public string SpoilageDate { get; set; }
+
+        }
+    }
+
 
 }

@@ -8,7 +8,7 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Vendor &raquo;"), "Create", null, null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Vendor &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
     &nbsp;&nbsp;&nbsp;<label class="filter">Filter by</label>&nbsp;&nbsp;&nbsp;<label class="filter">State</label>&nbsp;&nbsp;&nbsp;
     @Html.DropDownList("State", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
 

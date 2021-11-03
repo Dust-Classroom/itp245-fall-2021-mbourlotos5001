@@ -8,7 +8,7 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Category &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
 </p>
 <table class="table">
     <tr>
@@ -24,9 +24,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }, new { @class = "badge rounded-pill bg-success" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }, new { @class = "badge rounded-pill bg-warning" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId }, new { @class = "badge rounded-pill bg-danger" })
         </td>
     </tr>
 }

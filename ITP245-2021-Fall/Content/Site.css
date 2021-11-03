@@ -42,7 +42,8 @@ textarea {
 }
 
 .navbar-expand-lg {
-    background-color: aqua;
+   padding-left: 48px;
+   padding-right: 48px;
 }
 
 .navbar-right > li > a {
@@ -66,4 +67,18 @@ textarea {
     max-width: 100%;
     
 
+}
+
+@media (max-width: 480px) {
+    .navbar-expand-lg > .mobile {
+        justify-content: center;
+        text-align:center;
+    }
+    .navbar-expand-lg > .mobile > .navbar-brand {
+        margin: 1rem 0;
+    }
+}
+
+.table tr:nth-child(even){
+    background-color:lightgray;
 }

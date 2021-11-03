@@ -8,10 +8,13 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Purchase Order &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseOrderNumber)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.PoDate)
         </th>
@@ -25,22 +28,25 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PoDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vendor.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PurchaseOrderNumber }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PurchaseOrderNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PurchaseOrderNumber })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PurchaseOrderNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateDay)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Val)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Vendor.Name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-success" }) 
+        @Html.ActionLink("Details", "Details", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-warning" }) 
+        @Html.ActionLink("Delete", "Delete", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-danger" })
+    </td>
+</tr>
 }
 
 </table>

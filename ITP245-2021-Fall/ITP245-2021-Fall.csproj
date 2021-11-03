@@ -249,6 +249,11 @@
     <Content Include="Areas\Inventory\Views\Vendors\Index.cshtml" />
     <Content Include="Areas\Inventory\Views\Items\_Index.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\_Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\_edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

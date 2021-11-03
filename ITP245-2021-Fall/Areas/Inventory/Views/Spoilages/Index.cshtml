@@ -8,7 +8,7 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Spoilage &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
 </p>
 <table class="table">
     <tr>
@@ -45,18 +45,18 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SpoilageDate)
+            @Html.DisplayFor(modelItem => item.DateDay)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Value)
+            @Html.DisplayFor(modelItem => item.Val)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-success" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-warning" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-danger" })
         </td>
     </tr>
 }

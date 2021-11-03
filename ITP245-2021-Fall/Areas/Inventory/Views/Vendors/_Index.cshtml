@@ -64,9 +64,9 @@
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.VendorId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.VendorId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.VendorId }, new { @class = "badge rounded-pill bg-success" }) 
+                @Html.ActionLink("Details", "Details", new { id = item.VendorId }, new { @class = "badge rounded-pill bg-warning" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.VendorId }, new { @class = "badge rounded-pill bg-danger" })
             </td>
         </tr>
     }

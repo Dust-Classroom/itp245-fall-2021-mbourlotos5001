@@ -259,7 +259,7 @@
           <Property Name="SpoilageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="ReasonType" Type="Int32" Nullable="false" />
+          <Property Name="ReasonType" Type="InventoryModel.Reason" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SpoilageDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Value" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
@@ -388,6 +388,11 @@
             <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
           </AssociationSet>
         </EntityContainer>
+        <EnumType Name="Reason">
+          <Member Name="Spoiled" Value="1" />
+          <Member Name="Damaged" Value="2" />
+          <Member Name="Broke" Value="3" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
