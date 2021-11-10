@@ -7,6 +7,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ITP245_Model
 {
+    public interface IEmail
+    {
+        string VendorEmail { get; }
+        string VendorContact { get; }
+    }
+
+
+
     [MetadataType(typeof(ItemMetaData))]
     public partial class Item
     {
@@ -51,8 +59,10 @@ namespace ITP245_Model
         }
     }
     [MetadataType(typeof(VendorMetaData))]
-    public partial class Vendor
+    public partial class Vendor : IEmail
     {
+        public string VendorEmail => Email;
+        public string VendorContact => Contact;
         private sealed class VendorMetaData
         {
             [Display(Name = "Vendor")]

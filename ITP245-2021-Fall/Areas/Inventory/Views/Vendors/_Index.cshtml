@@ -1,7 +1,8 @@
-﻿@model IEnumerable<ITP245_Model.Vendor>
+﻿@using ITP245_2021_Fall.htmlHelpers;
+@model IEnumerable<ITP245_Model.Vendor>
 
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -58,7 +59,9 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.EmailAnchor(item)
+
+                @*@Html.DisplayFor(modelItem => item.Email)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Contact)

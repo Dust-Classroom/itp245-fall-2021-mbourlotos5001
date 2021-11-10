@@ -14,11 +14,14 @@
 
 </p>
 
-<div id="vendorContainer">
+<div id="vendorContainer" class="table-responsive" style="height:30rem; overflow:auto;" >
     @Html.Partial("_Index", Model)
 </div>
 
 @section Scripts {
+    <script src="~/Scripts/itp-245/emailAnchor.js"></script>
+
+
     <script type="text/javascript">
         function FillByTag() {
             var parm = $('#State').val();

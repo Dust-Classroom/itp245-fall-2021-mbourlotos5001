@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ITP245_Model.Item>
+@using ITP245_2021_Fall.htmlHelpers;
 
 @{
     ViewBag.Title = "ITEMS";
@@ -12,8 +13,10 @@
     @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Item &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
     &nbsp;&nbsp;&nbsp;<label class="filter">Filter by</label>&nbsp;&nbsp;&nbsp;<label class="filter">Format</label>&nbsp;&nbsp;&nbsp;
     @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+
     &nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name</label>&nbsp;&nbsp;&nbsp;
     @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()", @rows = "1" })
+    @*@Html.SearchBox("Search Item Name")*@
 </p>
 
 <div id="itemContainer">

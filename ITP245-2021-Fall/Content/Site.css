@@ -77,8 +77,32 @@ textarea {
     .navbar-expand-lg > .mobile > .navbar-brand {
         margin: 1rem 0;
     }
+
+    .nav-item {
+        margin-right: 0rem;
+    }
+
+    .navbar-nav {
+        margin: .75rem 0;
+    }
 }
 
 .table tr:nth-child(even){
     background-color:lightgray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdown-divider {
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+a.email {
+    color: #1f9bcf;
+}
+
+a.email:hover {
+    font-size: 120%;
 }
