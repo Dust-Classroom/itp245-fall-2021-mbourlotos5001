@@ -42,7 +42,7 @@
             </td>
            
             <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
+                @Html.ActionLink(item.Category.Name.ToString(), "Details", "Categories", new {id = item.Category.CategoryId }, new { @class = "badge bg-info" })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "badge rounded-pill bg-success" }) 

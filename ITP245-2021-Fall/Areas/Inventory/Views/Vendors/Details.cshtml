@@ -1,5 +1,7 @@
 ﻿@using ITP245_2021_Fall.htmlHelpers;
+@using System.Web.Mvc.Html;
 @model ITP245_Model.Vendor
+
 
 @{
     ViewBag.Title = "Details";
@@ -15,11 +17,23 @@
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseOrders)
+        </dt>
+        <dd>
+            @foreach (var purchaseOrder in Model.PurchaseOrders)
+            {
 
+                @Html.ActionLink("#" + purchaseOrder.PurchaseOrderNumber.ToString(),"Details", "PurchaseOrders", new {id = purchaseOrder.PurchaseOrderNumber }, new { @class = "badge bg-info" }) <br />
+
+
+            }
+
+
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Address1)
         </dt>

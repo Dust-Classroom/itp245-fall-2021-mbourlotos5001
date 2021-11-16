@@ -80,6 +80,9 @@ namespace ITP245_Model
             [Display(Name = "Address 2")]
             public string Address2 { get; set; }
 
+            [Display(Name = "Purchase Orders")]
+            public string PurchaseOrders { get; set; }
+
 
         }
     }

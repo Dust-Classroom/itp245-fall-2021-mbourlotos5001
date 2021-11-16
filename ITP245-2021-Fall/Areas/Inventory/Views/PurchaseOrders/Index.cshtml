@@ -39,7 +39,7 @@
         @Html.DisplayFor(modelItem => item.Val)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Vendor.Name)
+        @Html.ActionLink(item.Vendor.Name.ToString(), "Details", "Vendors", new { id = item.VendorId }, new { @class = "badge bg-info" })
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-success" }) 

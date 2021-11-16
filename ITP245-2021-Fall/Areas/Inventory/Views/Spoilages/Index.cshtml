@@ -51,11 +51,11 @@
             @Html.DisplayFor(modelItem => item.Val)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Item.Name)
+            @Html.ActionLink(item.Item.Name.ToString(), "Details", "Items", new { id = item.ItemId}, new { @class = "badge bg-info" })
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-success" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-warning" }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-success" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-warning" }) 
             @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-danger" })
         </td>
     </tr>
