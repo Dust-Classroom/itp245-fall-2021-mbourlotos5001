@@ -2,15 +2,15 @@
     ViewBag.Title = "Inventory";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Title Application</h2>
 <section class="py-5 text-center text-white back my-auto">
     <div class="row py-lg-5 ">
         <div class="mx-auto">
             <h1 class="text-white">Michael Bourlotos</h1>
-            <p class="lead">Inventory Area with Views for the Home Page, About, and Contact.</p>
+            <p class="lead">Web Based Inventory Application</p>
             <p>
-                @Html.ActionLink(HttpUtility.HtmlDecode("School &raquo;"), "Index", "SchoolHome", new { area = "School" }, new { @class = "btn btn-primary" })
-                @Html.ActionLink(HttpUtility.HtmlDecode("Inventory &raquo;"), "Index", "InventoryHome", new { area = "Inventory" }, new { @class = "btn btn-secondary" })
+                @*@Html.ActionLink(HttpUtility.HtmlDecode("School &raquo;"), "Index", "SchoolHome", new { area = "School" }, new { @class = "btn btn-primary" })*@
+                @Html.ActionLink(HttpUtility.HtmlDecode("Inventory Home"), "Index", "InventoryHome", new { area = "Inventory" }, new { @class = "btn btn-secondary" })
             </p>
         </div>
     </div>

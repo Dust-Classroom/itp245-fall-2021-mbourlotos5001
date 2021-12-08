@@ -106,3 +106,7 @@ a.email {
 a.email:hover {
     font-size: 120%;
 }
+
+.inventory_home > .row {
+    padding-top: 1rem;
+}

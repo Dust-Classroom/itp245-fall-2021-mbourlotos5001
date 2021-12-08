@@ -42,9 +42,10 @@
         @Html.ActionLink(item.Vendor.Name.ToString(), "Details", "Vendors", new { id = item.VendorId }, new { @class = "badge bg-info" })
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-success" }) 
-        @Html.ActionLink("Details", "Details", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-warning" }) 
+        @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-success" })
+        @Html.ActionLink("Details", "Details", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-warning" })
         @Html.ActionLink("Delete", "Delete", new { id = item.PurchaseOrderNumber }, new { @class = "badge rounded-pill bg-danger" })
+       
     </td>
 </tr>
 }

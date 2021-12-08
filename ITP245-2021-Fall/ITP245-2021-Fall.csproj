@@ -196,6 +196,27 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\School\Images\Agent Jay.jpg" />
+    <Content Include="Areas\School\Images\Anne Shirley.jpg" />
+    <Content Include="Areas\School\Images\Clarice Starling.jpg" />
+    <Content Include="Areas\School\Images\Dana Scully.jpg" />
+    <Content Include="Areas\School\Images\Dorian Gray.jpg" />
+    <Content Include="Areas\School\Images\Dorothy Gale.jpg" />
+    <Content Include="Areas\School\Images\ElizabethBennet.jpg" />
+    <Content Include="Areas\School\Images\Ferris Bueller.jpg" />
+    <Content Include="Areas\School\Images\Han Solo.jpg" />
+    <Content Include="Areas\School\Images\Herman Boone.jpg" />
+    <Content Include="Areas\School\Images\Herman Boone.png" />
+    <Content Include="Areas\School\Images\Hermione Granger.jpg" />
+    <Content Include="Areas\School\Images\Jackie Brown.jpg" />
+    <Content Include="Areas\School\Images\James Bond.jpg" />
+    <Content Include="Areas\School\Images\James Bond.png" />
+    <Content Include="Areas\School\Images\Jo March.jpg" />
+    <Content Include="Areas\School\Images\Luna Lovegood.jpg" />
+    <Content Include="Areas\School\Images\Mary Poppins.jpg" />
+    <Content Include="Areas\School\Images\Nichelle Nicholls Uhura.jpg" />
+    <Content Include="Areas\School\Images\Rhett Butler.jpg" />
+    <Content Include="Areas\School\Images\Sir Lancelot.jpg" />
     <Content Include="Content\images\box.jpg" />
     <Content Include="Content\lux.css" />
     <Content Include="Content\images\pipe.jpg" />
@@ -251,10 +272,16 @@
     <Content Include="Areas\Inventory\Views\Items\_Index.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\_Index.cshtml" />
     <Content Include="Areas\Inventory\Views\Items\_edit.cshtml" />
-    <Content Include="Areas\Inventory\Views\PurchaseOrders\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_Edit.cshtml" />
     <Content Include="Areas\Inventory\Views\Categories\_edit.cshtml" />
     <Content Include="Areas\Inventory\Views\Spoilages\_edit.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_PoItem.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\PoItem.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_PoChange.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\ChangeQuantity.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\ChangePrice.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\LoadTotal.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\itp-245\emailAnchor.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

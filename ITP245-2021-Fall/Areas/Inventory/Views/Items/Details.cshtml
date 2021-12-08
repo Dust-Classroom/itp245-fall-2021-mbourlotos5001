@@ -64,7 +64,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Category.Name)
+            @Html.ActionLink(Model.Category.Name, "Details", "Categories", new { id = Model.Category.CategoryId }, new { @class = "badge bg-info" })
         </dd>
 
     </dl>

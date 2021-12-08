@@ -1,0 +1,77 @@
+﻿@model ITP245_Model.PurchaseOrder
+@{
+    ViewBag.Title = "PoItem";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2 >PoItem for Order #@Model.PurchaseOrderNumber</h2>
+
+@Html.HiddenFor(model => model.PurchaseOrderNumber)
+
+<div id="priceContainer"></div>
+<div id="itemContainer"></div>
+ 
+<div class="form-group" id="itemForm">
+    <div class="container" id="container">
+        <table class="table" >
+
+            <tr>
+
+                <th>Title</th>
+                <th>Retail Price</th>
+                <th>Quantity</th>
+
+            </tr>
+            
+            @if (Model != null)
+            {
+                foreach (var item in Model.PoItems)
+                {
+                    <tr>
+                        @*<td>@Html.CheckBox(String.Format("PoItem|{0}", item.ItemId), item.InPurchaseOrder, new { id = String.Format("PoItem|{0}", item.ItemId), onchange = String.Format("changePoItem({0})", item.ItemId) })</td>*@
+                        <td>@item.Item.Name</td>
+                        <td><input type="number" id="@string.Format("PoItem|{0}", item.ItemId)" name="price " value="@item.Price" onchange="changePrice(@item.Item.ItemId)"></td>
+                        <td><input type="number" id="@string.Format("PoItem-A|{0}", item.ItemId)" name="quantity " value="@item.Quantity" onchange="changeQuantity(@item.Item.ItemId)"></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Save Items", "Edit", new { id = Model.PurchaseOrderNumber }, new {@class = "btn btn-primary" }) 
+    @Html.ActionLink("Back to List", "Index", new {@class = "btn btn-secondary" })
+</p>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        function changeQuantity(itemId) {
+            var purchaseOrderNumber = $('#PurchaseOrderNumber').val();
+            var poItemId = 'PoItem-A|' + itemId;
+            var poItem = document.getElementById(poItemId);
+            var value = poItem.value;
+            var parm = purchaseOrderNumber + '|' + itemId + '|' + value;
+            var container = $('#itemContainer');
+            container.load('@Url.Action("ChangeQuantity", "PurchaseOrders")?parm=' + parm);
+            console.log(value);
+        }
+        function changePrice(itemId) {
+            var purchaseOrderNumber = $('#PurchaseOrderNumber').val();
+            var poItemId = 'PoItem|' + itemId;
+            var poItem = document.getElementById(poItemId);
+            var value = poItem.value;
+            var parm = purchaseOrderNumber + '|' + itemId + '|' + value;
+            var container = $('#priceContainer');
+            container.load('@Url.Action("ChangePrice", "PurchaseOrders")?parm=' + parm);
+
+            console.log(parm);
+        }
+        window.onload = function() {
+            var purchaseOrderNumber = $('#PurchaseOrderNumber').val();
+            var container = $('#priceContainer');
+            container.load('@Url.Action("LoadTotal", "PurchaseOrders")?purchaseOrderNumber=' + purchaseOrderNumber);
+            console.log(purchaseOrderNumber);
+        }
+    </script>
+}

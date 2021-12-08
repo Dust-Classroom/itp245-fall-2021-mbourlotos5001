@@ -89,10 +89,13 @@ namespace ITP245_Model
     [MetadataType(typeof(PurchaseOrderMetaData))]
     public partial class PurchaseOrder
     {
+
         public string DateDay => PoDate.ToString("d");
         public string Val => $"{Amount:C}";
         private sealed class PurchaseOrderMetaData
         {
+            [Display(Name = "Purchase Order Items" )]
+            public string PoItems { get; set; }
 
             [Display(Name = "Vendor")]
             public string VendorId { get; set; }
@@ -127,6 +130,50 @@ namespace ITP245_Model
 
         }
     }
+    [MetadataType(typeof(PoItemMetaData))]
+    public partial class PoItem
+    {
 
+        public bool InPurchaseOrder { get; set; }
+        public static  List<PoItem> Fill(PurchaseOrder purchaseOrder)
+        {
+            var poItems = purchaseOrder.PoItems.ToList();
+            foreach (var item in poItems)
+            {
+                if (item.Quantity > 0)
+                {
+                    item.InPurchaseOrder = true;
+                }
+            }
+                
+                
+            var itemIds = poItems.Select(i => i.ItemId).ToArray();
+            using (var db = new InventoryEntities())
+            {
+                var notIn = db.Items.Where(i => !itemIds.Contains(i.ItemId)).ToList();
+                foreach (var item in notIn)
+                {
+                    purchaseOrder.PoItems.Add(new PoItem()
+                    {
+                        PurchaseOrderNumber = purchaseOrder.PurchaseOrderNumber,
+                        PurchaseOrder = purchaseOrder,
+                        ItemId = item.ItemId,
+                        Item = item,
+                        InPurchaseOrder = false,
+
+                     
+                    }); 
+   
+                }
+            }
+            return poItems;
+        }
+
+
+        private sealed class PoItemMetaData
+        {
+
+        }
+    }
 
 }
