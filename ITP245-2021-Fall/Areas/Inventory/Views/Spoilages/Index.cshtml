@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ITP245_Model.Spoilage>
+
+@{
+    ViewBag.Title = "Spoilage";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Spoilage &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpoilageDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Val)
+        </td>
+        <td>
+            @Html.ActionLink(item.Item.Name.ToString(), "Details", "Items", new { id = item.ItemId}, new { @class = "badge bg-info" })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-success" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-warning" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId }, new { @class = "badge rounded-pill bg-danger" })
+        </td>
+    </tr>
+}
+
+</table>

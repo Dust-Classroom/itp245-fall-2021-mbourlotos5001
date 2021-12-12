@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ITP245_Model.Vendor>
+
+@{
+    ViewBag.Title = "Vendors";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Create New Vendor &raquo;"), "Create", null, null, new { @class = "btn btn-info" })
+    &nbsp;&nbsp;&nbsp;<label class="filter">Filter by</label>&nbsp;&nbsp;&nbsp;<label class="filter">State</label>&nbsp;&nbsp;&nbsp;
+    @Html.DropDownList("State", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+
+</p>
+
+<div id="vendorContainer" class="table-responsive" style="height:30rem; overflow:auto;" >
+    @Html.Partial("_Index", Model)
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/itp-245/emailAnchor.js"></script>
+
+
+    <script type="text/javascript">
+        function FillByTag() {
+            var parm = $('#State').val();
+            var container = $('#vendorContainer');
+            container.load('@Url.Action("_IndexByTag")?parm=' + parm);
+            console.log(parm);
+        }
+    </script>
+}

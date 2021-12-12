@@ -1,0 +1,82 @@
+﻿@model ITP245_Model.PurchaseOrder
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PurchaseOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseOrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseOrderNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PoDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Val)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vendor.Name)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.Vendor.Name, "Details", "Vendors", new { id = Model.Vendor.VendorId }, new { @class = "badge bg-info" })
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PoItems)
+        </dt>
+        <dd> 
+           
+        </dd>
+    </dl>
+    <table class="table">
+
+        <tr>
+            <th>Items</th>
+            <th>Retail Price</th>
+            <th>Amount</th>
+        </tr>
+        @foreach (var x in Model.PoItems)
+        {
+            if (x.Quantity >= 0)
+            {
+                <tr>
+                    <td>@x.Item.Name</td>
+                    <td>$ @Math.Round(x.Item.RetailPrice, 2)</td>
+                    <td>@x.Quantity</td>
+                </tr>
+            } else
+                {
+
+                }
+            
+
+
+        }
+
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

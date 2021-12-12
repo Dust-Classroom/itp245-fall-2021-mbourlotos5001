@@ -1,5 +1,8 @@
-﻿using System.Web;
+﻿using System.Configuration;
 using System.Web.Optimization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ITP245_2021_Fall
 {
@@ -22,9 +25,15 @@ namespace ITP245_2021_Fall
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+
+
+            bundles.Add(new StyleBundle("~/Content/css").Include( 
+                     $"~/Content/{ConfigurationManager.AppSettings["Bootstrap"]}.css",
                       "~/Content/site.css"));
+
+           
+
+
         }
     }
 }

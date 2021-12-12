@@ -1,0 +1,26 @@
+﻿@model  string[][]
+@{
+    ViewBag.Title = "Transcript";
+}
+
+<h2>Transcript</h2>
+
+<table>
+    <tr>
+        <th>Food</th>
+        <th>Feed</th>
+        <th>Fun</th>
+    </tr>
+  
+                @foreach (var transcript in model)
+                {
+                    <tr>
+                        <td>@transcript[0]</td>
+                        <td>@transcript[1]</td>
+                        <td>@transcript[2]</td>
+                    </tr>
+                }
+            }
+
+
+</table>

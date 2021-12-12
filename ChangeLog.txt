@@ -1,9 +1,39 @@
---< YOUR NAME GOES HERE >--
+--< Michael Bourlotos>--
 Fall 2021
 ITP-245
 
---< SUBMISSION DATE 1 GOES HERE >--
---< Assignment Name 1 GOES HERE >--
+--< 09/13/2021 >--
+--< Controller View>--
 
---< SUBMISSION DATE 2 GOES HERE >--
---< Assignment Name 2 GOES HERE >--
+--< 09/22/2021 >--
+--< Model>--
+
+--< 09/30/2021 >--
+--< Home Page >--
+
+--< 10/06/2021 >--
+--< Bootstrap>--
+
+--< 10/04/2021 >--
+--< Security>--
+
+--< 10/19/2021 >--
+--< Scaffolding >--
+
+--< 10/28/2021 >--
+--< Filters, JavaScript, Partial Pages >--
+
+--< 11/2/2021 >--
+--< Assignment: Odds-and-Ends>--
+
+--< 11/9/2021 >--
+--< Assignment: Html Helper>--
+
+--< 11/15/2021 >--
+--< Assignment: One To Many Relationship>--
+
+--< 12/08/2021 >--
+--< Assignment: Final Project>--
+
+
+

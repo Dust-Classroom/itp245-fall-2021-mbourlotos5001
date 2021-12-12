@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,12 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -167,30 +167,123 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Inventory\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\InventoryHomeController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\ItemsController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\PurchaseOrdersController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\SpoilagesController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\VendorsController.cs" />
+    <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
+    <Compile Include="Areas\School\Controllers\SchoolHomeController.cs" />
+    <Compile Include="Areas\School\SchoolAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="htmlHelpers\htmlExtensions.cs" />
+    <Compile Include="Models\About.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Stu.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\School\Images\Agent Jay.jpg" />
+    <Content Include="Areas\School\Images\Anne Shirley.jpg" />
+    <Content Include="Areas\School\Images\Clarice Starling.jpg" />
+    <Content Include="Areas\School\Images\Dana Scully.jpg" />
+    <Content Include="Areas\School\Images\Dorian Gray.jpg" />
+    <Content Include="Areas\School\Images\Dorothy Gale.jpg" />
+    <Content Include="Areas\School\Images\ElizabethBennet.jpg" />
+    <Content Include="Areas\School\Images\Ferris Bueller.jpg" />
+    <Content Include="Areas\School\Images\Han Solo.jpg" />
+    <Content Include="Areas\School\Images\Herman Boone.jpg" />
+    <Content Include="Areas\School\Images\Herman Boone.png" />
+    <Content Include="Areas\School\Images\Hermione Granger.jpg" />
+    <Content Include="Areas\School\Images\Jackie Brown.jpg" />
+    <Content Include="Areas\School\Images\James Bond.jpg" />
+    <Content Include="Areas\School\Images\James Bond.png" />
+    <Content Include="Areas\School\Images\Jo March.jpg" />
+    <Content Include="Areas\School\Images\Luna Lovegood.jpg" />
+    <Content Include="Areas\School\Images\Mary Poppins.jpg" />
+    <Content Include="Areas\School\Images\Nichelle Nicholls Uhura.jpg" />
+    <Content Include="Areas\School\Images\Rhett Butler.jpg" />
+    <Content Include="Areas\School\Images\Sir Lancelot.jpg" />
+    <Content Include="Content\images\box.jpg" />
+    <Content Include="Content\lux.css" />
+    <Content Include="Content\images\pipe.jpg" />
+    <Content Include="Content\mint.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\My Post.jpg" />
+    <Content Include="Content\images\inv.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\School\Views\web.config" />
+    <Content Include="Areas\Inventory\Views\web.config" />
+    <Content Include="Areas\School\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\School\Views\SchoolHome\Index.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_School.cshtml" />
+    <Content Include="Areas\Inventory\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Inventory\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Inventory\Views\InventoryHome\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Shared\_Inventory.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\_Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\_Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\_edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_PoItem.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\PoItem.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\_PoChange.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\ChangeQuantity.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\ChangePrice.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\LoadTotal.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\itp-245\emailAnchor.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -201,6 +294,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Content\images\drummy.jpeg" />
+    <Content Include="Content\images\olive.png" />
+    <Content Include="Content\images\surfo.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -213,7 +309,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -235,9 +330,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Student\Transcript.cshtml" />
+    <Content Include="Views\Students\Detail.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Inventory\Data\" />
+    <Folder Include="Areas\School\Data\" />
+    <Folder Include="Views\About\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -251,6 +355,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITP245-Model\ITP245-Model.csproj">
+      <Project>{43bb9582-f854-4124-9c1b-4867f3e22c71}</Project>
+      <Name>ITP245-Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

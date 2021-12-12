@@ -1,12 +1,17 @@
 ﻿body {
-    padding-top: 50px;
+  /* padding-top: 50px;
     padding-bottom: 20px;
+   */
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+   
+/*    padding-left: 15px;
+    padding-right: 15px;*/
+}
+.body-content > h2 {
+    padding-top: 48px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +26,87 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.back {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url("images/pipe.jpg");
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.schoolNavLink > li {
+    padding-right: 10px;
+    
+}
+
+.navbar-expand-lg {
+   padding-left: 48px;
+   padding-right: 48px;
+}
+
+.navbar-right > li > a {
+    color: #ced4da;
+}
+
+.kennyLogins {
+    background-color: #FFFF00
+}
+.inventory--nav {
+    margin: 20px;
+}
+
+
+.inventory--nav > ul > li > a {
+    text-decoration: none;
+}
+
+
+.inventory--content {
+    max-width: 100%;
+    
+
+}
+
+@media (max-width: 480px) {
+    .navbar-expand-lg > .mobile {
+        justify-content: center;
+        text-align:center;
+    }
+    .navbar-expand-lg > .mobile > .navbar-brand {
+        margin: 1rem 0;
+    }
+
+    .nav-item {
+        margin-right: 0rem;
+    }
+
+    .navbar-nav {
+        margin: .75rem 0;
+    }
+}
+
+.table tr:nth-child(even){
+    background-color:lightgray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdown-divider {
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+a.email {
+    color: #1f9bcf;
+}
+
+a.email:hover {
+    font-size: 120%;
+}
+
+.inventory_home > .row {
+    padding-top: 1rem;
 }

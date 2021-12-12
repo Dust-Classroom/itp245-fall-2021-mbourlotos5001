@@ -1,0 +1,20 @@
+﻿@model ITP245_Model.Item
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ItemId)
+    
+    @Html.Partial("_edit")
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

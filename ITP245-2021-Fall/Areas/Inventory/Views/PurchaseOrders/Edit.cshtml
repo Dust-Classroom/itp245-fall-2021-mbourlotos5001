@@ -1,0 +1,38 @@
+﻿@model ITP245_Model.PurchaseOrder
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Inventory/Views/Shared/_Inventory.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+
+    @Html.Partial("_Edit")
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function changePoItem(itemId) {
+            var purchaseOrderNumber = $('#PurchaseOrderNumber').val();
+            var poItemId = 'PoItem|' + itemId;
+            var poItem = document.getElementById(poItemId);
+            var checked = poItem.checked;
+            var parm = purchaseOrderNumber + '|' + itemId + '|' + checked;
+            var container = $('#itemContainer');
+            container.load('@Url.Action("_PoChange", "PurchaseOrders")?parm=' + parm);
+            console.log(purchaseOrderNumber);
+            console.log(poItem);
+            console.log(checked);
+        }
+        
+    </script>
+}
